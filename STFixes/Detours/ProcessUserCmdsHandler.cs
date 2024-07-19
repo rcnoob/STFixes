@@ -23,8 +23,11 @@ using CounterStrikeSharp.API.Modules.Memory.DynamicFunctions;
 using STFixes.Extensions;
 using STFixes.Models;
 using STFixes.Schemas.Protobuf;
+using STFixes;
 using Microsoft.Extensions.Logging;
 using CBaseUserCmdPB = STFixes.Schemas.Protobuf.CBaseUserCmdPB;
+using CounterStrikeSharp.API.Modules.Config;
+using STFixes.Config;
 
 namespace STFixes.Detours;
 
@@ -73,6 +76,10 @@ public class ProcessUserCmdsHandler : PreHandler
         // https://github.com/maecry/asphyxia-cs2/blob/master/cstrike/sdk/datatypes/usercmd.h#L262-L291
         IntPtr cmdsPtr = h.GetParam<IntPtr>(1);
         
+        float desiredTickrate = Configuration.desiredTickrate;
+        float subticksPerTick = desiredTickrate / 64.0f;
+	    float accumulatedSubticks = 0.0f;
+
         for (ulong cmdIdx = 0; cmdIdx < (ulong)numCommands; cmdIdx++)
         {
             IntPtr cmdPtr = (IntPtr)((ulong)cmdsPtr + cmdIdx * CUserCmd.Size());
@@ -130,6 +137,7 @@ public class ProcessUserCmdsHandler : PreHandler
             
             for (int subTickMoveIdx = 0; subTickMoveIdx < subTickMoves.CurrentSize; subTickMoveIdx++)
             {
+
                 IntPtr? subTickMoveAddress = subTickMoves[subTickMoveIdx];
                 if(subTickMoveAddress == null) continue;
                 CSubTickMoveStep subTickMove = new((IntPtr)subTickMoveAddress);
@@ -147,8 +155,9 @@ public class ProcessUserCmdsHandler : PreHandler
                     
                     // _logger.LogInformation("[OnProcessUsercmds][cmdIdx={0}][subTickMoveIdx={1}][whenPre={2}]",
                     //     cmdIdx, subTickMoveIdx, subTickMove.When);
-
-                subTickMove.When = subTickMove.When >= 0.5f ? 0.5f : 0.0f;
+                float when = accumulatedSubticks - (int)accumulatedSubticks;
+                subTickMove.When = when;
+                accumulatedSubticks += subticksPerTick;
                     
                     // _logger.LogInformation("[OnProcessUsercmds][cmdIdx={0}][subTickMoveIdx={1}][whenPost={2}]",
                     //     cmdIdx, subTickMoveIdx, subTickMove.When);

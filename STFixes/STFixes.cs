@@ -30,7 +30,7 @@ public partial class STFixes: BasePlugin
     public override string ModuleVersion => _moduleInformation.ModuleVersion;
     public override string ModuleAuthor => _moduleInformation.ModuleAuthor;
     public override string ModuleDescription => _moduleInformation.ModuleDescription;
-    
+
     private readonly ModuleInformation _moduleInformation;
     private readonly Configuration _configuration;
     
