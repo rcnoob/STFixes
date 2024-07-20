@@ -61,9 +61,6 @@ public class PatchManager
             AddServerPatch("FixWaterFloorJump", "CheckJumpButtonWater", "11 43");
             AddServerPatch("WaterLevelGravity", "WaterLevelGravity", "3C 02");
             AddServerPatch("CategorizeUnderwater", "CategorizeUnderwater", "0F 42");
-            
-            // Server Movement Unlocker
-            AddServerPatch("ServerMovementUnlock", "ServerMovementUnlock", "90 90 90 90 90 90");
         }
         else
         {
@@ -71,9 +68,6 @@ public class PatchManager
             AddServerPatch("FixWaterFloorJump", "CheckJumpButtonWater", "11 43");
             AddServerPatch("WaterLevelGravity", "WaterLevelGravity", "3C 02");
             AddServerPatch("CategorizeUnderwater", "CategorizeUnderwater", "73");
-            
-            // Server Movement Unlocker
-            AddServerPatch("ServerMovementUnlock", "ServerMovementUnlock", "EB");
         }
     }
     

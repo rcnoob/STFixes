@@ -84,7 +84,6 @@ public class FixManager(PatchManager patchManager, DetourManager detourManager, 
         _fixes.Add(new WaterFix());
         _fixes.Add(new TriggerPushFix());
         _fixes.Add(new SubTickMovementFix());
-        _fixes.Add(new MovementUnlockerFix());
     }
     
     public void Stop()

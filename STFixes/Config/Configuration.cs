@@ -30,7 +30,6 @@ namespace STFixes.Config
         private bool enableTriggerPushFix = true;
         private bool disableSubTickMovement = true;
         public static float desiredTickrate = 64.0f;
-        private bool enableMovementUnlocker = false;
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
@@ -118,19 +117,6 @@ namespace STFixes.Config
                 if (desiredTickrate != value)
                 {
                     desiredTickrate = value;
-                    OnPropertyChanged();
-                }
-            }
-        }
-
-        public bool EnableMovementUnlocker
-        {
-            get => enableMovementUnlocker;
-            set
-            {
-                if (enableMovementUnlocker != value)
-                {
-                    enableMovementUnlocker = value;
                     OnPropertyChanged();
                 }
             }
