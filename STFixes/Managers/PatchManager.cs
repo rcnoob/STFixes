@@ -61,6 +61,7 @@ public class PatchManager
             AddServerPatch("FixWaterFloorJump", "CheckJumpButtonWater", "11 43");
             AddServerPatch("WaterLevelGravity", "WaterLevelGravity", "3C 02");
             AddServerPatch("CategorizeUnderwater", "CategorizeUnderwater", "0F 42");
+            AddServerPatch("BotNavIgnore", "BotNavIgnore", "\\xE9\\x15\\x00\\x00\\x00");
         }
         else
         {
@@ -68,6 +69,7 @@ public class PatchManager
             AddServerPatch("FixWaterFloorJump", "CheckJumpButtonWater", "11 43");
             AddServerPatch("WaterLevelGravity", "WaterLevelGravity", "3C 02");
             AddServerPatch("CategorizeUnderwater", "CategorizeUnderwater", "73");
+            AddServerPatch("BotNavIgnore", "BotNavIgnore", "\\xE9\\x2C\\x00\\x00\\x00\\x90");
         }
     }
     

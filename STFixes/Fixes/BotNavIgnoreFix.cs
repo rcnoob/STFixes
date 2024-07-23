@@ -17,12 +17,17 @@
     this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-namespace STFixes.Config;
+namespace STFixes.Fixes;
 
-public class ModuleInformation
+public class BotNavIgnoreFix: BaseFix
 {
-    public string ModuleName => "ST-Fixes";
-    public string ModuleVersion => "1.0.3";
-    public string ModuleAuthor => "hypnos <hyps.dev>, rcnoob";
-    public string ModuleDescription => "SharpTimer Fixes";
+    public BotNavIgnoreFix()
+    {
+        Name = "BotNavIgnoreFix";
+        ConfigurationProperty = "EnableBotNavIgnoreFix";
+        PatchNames =
+        [
+            "BotNavIgnore"
+        ];
+    }
 }

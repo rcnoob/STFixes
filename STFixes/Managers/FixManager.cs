@@ -82,6 +82,7 @@ public class FixManager(PatchManager patchManager, DetourManager detourManager, 
         logger.LogInformation("[STFixes][FixManager][Start()]");
         
         _fixes.Add(new WaterFix());
+        _fixes.Add(new BotNavIgnoreFix());
         _fixes.Add(new TriggerPushFix());
         _fixes.Add(new SubTickMovementFix());
     }

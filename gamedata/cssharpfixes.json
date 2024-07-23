@@ -30,8 +30,8 @@
   "BotNavIgnore": {
     "signatures": {
       "library": "server",
-      "windows": "0F 84 ? ? ? ? 80 B8 ? ? ? ? 00 0F 84 ? ? ? ? 80 3D ? ? ? ? 00 74 15",
-      "linux": "0F 45 C2 4D 85 C0 0F 95 C2 20 C2"
+      "windows": "\\x0F\\x84\\x2A\\x2A\\x2A\\x2A\\x80\\xB8\\x2A\\x2A\\x2A\\x2A\\x00\\x0F\\x84\\x2A\\x2A\\x2A\\x2A\\x80\\x3D\\x2A\\x2A\\x2A\\x2A\\x00\\x74\\x15",
+      "linux": "\\x48\\x85\\xC0\\x74\\x2E\\x80\\xB8\\x2A\\x2A\\x2A\\x2A\\x00\\x74\\x25"
     }
   },
   "ServerMovementUnlock": {

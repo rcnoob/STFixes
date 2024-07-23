@@ -27,6 +27,7 @@ namespace STFixes.Config
     public class Configuration(ILogger<STFixes> logger, FixManager fixManager) : INotifyPropertyChanged
     {
         private bool enableWaterFix = true;
+        private bool enableBotNavIgnoreFix = true;
         private bool enableTriggerPushFix = true;
         private bool disableSubTickMovement = true;
         public static float desiredTickrate = 64.0f;
@@ -65,6 +66,18 @@ namespace STFixes.Config
                 if (enableWaterFix != value)
                 {
                     enableWaterFix = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+        public bool EnableBotNavIgnoreFix
+        {
+            get => enableBotNavIgnoreFix;
+            set
+            {
+                if (enableBotNavIgnoreFix != value)
+                {
+                    enableBotNavIgnoreFix = value;
                     OnPropertyChanged();
                 }
             }
