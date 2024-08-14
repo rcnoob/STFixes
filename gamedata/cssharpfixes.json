@@ -2,15 +2,15 @@
   "WaterLevelGravity": {
     "signatures": {
       "library": "server",
-      "windows": "3C 01 49 8B 5B 10 49 8B 7B 18 0F 97 C0 41 0F 28",
-      "linux": "3C 01 0F 97 C0 48 81 C4 50 01"
+      "windows": "\\x3C\\x01\\x49\\x8B\\x5B\\x10\\x49\\x8B\\x7B\\x18\\x0F\\x97\\xC0\\x41\\x0F\\x28",
+      "linux": "\\x3C\\x01\\x0F\\x97\\xC0\\x48\\x81\\xC4\\x50\\x01"
     }
   },
   "CheckJumpButtonWater": {
     "signatures": {
       "library": "server",
-      "windows": "C8 42 EB ? 48 8B 4B 30",
-      "linux": "C8 42 66 0F EF DB 41 0F 2F 5D"
+      "windows": "\\xC8\\x42\\xEB\\x2A\\x48\\x8B\\x4B\\x30",
+      "linux": "\\xC8\\x42\\x66\\x0F\\xEF\\xE4\\x0F\\x2F\\x63\\x5C"
     }
   },
   "CategorizeUnderwater": {
