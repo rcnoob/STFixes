@@ -23,7 +23,7 @@ namespace STFixes.Schemas.Protobuf;
 
 public class CUserCmd: Interfaces.ISizeable
 {
-    public static ulong Size() => RuntimeInformation.IsOSPlatform(OSPlatform.Windows) ? (ulong)0x88 : (ulong)0x80;
+    public static ulong Size() => RuntimeInformation.IsOSPlatform(OSPlatform.Windows) ? (ulong)0x98 : (ulong)0x90;
     
     private IntPtr _address;
     private Dictionary<string, ulong> _offsets = new();
@@ -35,8 +35,8 @@ public class CUserCmd: Interfaces.ISizeable
         
         // CBasePB + RepeatedPtrField_t<CCSGOInputHistoryEntryPB>
         // 0x18 + 0x18 = 0x30
-        _offsets.Add("Base", 0x30); //CBasePB + RepeatedPtrField_t<CCSGOInputHistoryEntryPB>
-        _offsets.Add("LeftHandDesired", 0x38);
+        _offsets.Add("Base", 0x40); //CBasePB + RepeatedPtrField_t<CCSGOInputHistoryEntryPB>
+        _offsets.Add("LeftHandDesired", 0x48);
     }
     
     ~CUserCmd()

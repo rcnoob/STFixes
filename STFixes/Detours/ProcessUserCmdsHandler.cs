@@ -75,10 +75,6 @@ public class ProcessUserCmdsHandler : PreHandler
         
         // https://github.com/maecry/asphyxia-cs2/blob/master/cstrike/sdk/datatypes/usercmd.h#L262-L291
         IntPtr cmdsPtr = h.GetParam<IntPtr>(1);
-        
-        float desiredTickrate = Configuration.desiredTickrate;
-        float subticksPerTick = desiredTickrate / 64.0f;
-	    float accumulatedSubticks = 0.0f;
 
         for (ulong cmdIdx = 0; cmdIdx < (ulong)numCommands; cmdIdx++)
         {
@@ -155,9 +151,7 @@ public class ProcessUserCmdsHandler : PreHandler
                     
                     // _logger.LogInformation("[OnProcessUsercmds][cmdIdx={0}][subTickMoveIdx={1}][whenPre={2}]",
                     //     cmdIdx, subTickMoveIdx, subTickMove.When);
-                float when = accumulatedSubticks - (int)accumulatedSubticks;
-                subTickMove.When = when;
-                accumulatedSubticks += subticksPerTick;
+                subTickMove.When = 0.0f;
                     
                     // _logger.LogInformation("[OnProcessUsercmds][cmdIdx={0}][subTickMoveIdx={1}][whenPost={2}]",
                     //     cmdIdx, subTickMoveIdx, subTickMove.When);

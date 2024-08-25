@@ -30,7 +30,6 @@ namespace STFixes.Config
         private bool enableBotNavIgnoreFix = true;
         private bool enableTriggerPushFix = true;
         private bool disableSubTickMovement = true;
-        public static float desiredTickrate = 64.0f;
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
@@ -118,18 +117,6 @@ namespace STFixes.Config
                 if (disableSubTickMovement != value)
                 {
                     disableSubTickMovement = value;
-                    OnPropertyChanged();
-                }
-            }
-        }
-        public float DesiredTickrate
-        {
-            get => desiredTickrate;
-            set
-            {
-                if (desiredTickrate != value)
-                {
-                    desiredTickrate = value;
                     OnPropertyChanged();
                 }
             }

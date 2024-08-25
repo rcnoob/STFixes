@@ -30,7 +30,6 @@ public partial class STFixes
     public FakeConVar<bool> EnableBotNavIgnoreFix = new("css_bot_ignore_nav_fix", "Fixes bots not spawning without navmesh", true);
     public FakeConVar<bool> EnableTriggerPushFix = new("css_fixes_trigger_push_fix", "Reverts trigger_push behaviour to that seen in CS:GO.", true);
     public FakeConVar<bool> DisableSubTickMovement = new("css_fixes_disable_sub_tick_movement", "Disables sub-tick movement.", true);
-    public FakeConVar<float> DesiredTickrate = new("css_fixes_desired_tickrate", "Desired tickrate for the server.", 64.0f);
     
     private void RegisterConVars()
     {
@@ -38,7 +37,6 @@ public partial class STFixes
         EnableBotNavIgnoreFix.ValueChanged += (sender, value) => { _configuration.EnableBotNavIgnoreFix = value; };
         EnableTriggerPushFix.ValueChanged += (sender, value) => { _configuration.EnableTriggerPushFix = value; };
         DisableSubTickMovement.ValueChanged += (sender, value) => { _configuration.DisableSubTickMovement = value; };
-        DesiredTickrate.ValueChanged += (sender, value) => { _configuration.DesiredTickrate = value; };
         
         RegisterFakeConVars(typeof(ConVar));
     }
