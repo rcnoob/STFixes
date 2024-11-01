@@ -10,7 +10,7 @@
     "signatures": {
       "library": "server",
       "windows": "\\xC8\\x42\\xEB\\x2A\\x48\\x8B\\x4B\\x30",
-      "linux": "\\xC8\\x42\\x66\\x0F\\xEF\\xE4\\x0F\\x2F\\x63\\x5C"
+      "linux": "\\xC8\\x42\\x66\\x0F\\xEF\\xFF\\x0F\\x2F\\x7B\\x5C"
     }
   },
   "CategorizeUnderwater": {
