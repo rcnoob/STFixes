@@ -29,7 +29,7 @@ public partial class STFixes
     public FakeConVar<bool> EnableWaterFix = new("css_fixes_water_fix", "Fixes being stuck to the floor underwater, allowing players to swim up.", true);
     public FakeConVar<bool> EnableBotNavIgnoreFix = new("css_bot_ignore_nav_fix", "Fixes bots not spawning without navmesh", true);
     public FakeConVar<bool> EnableTriggerPushFix = new("css_fixes_trigger_push_fix", "Reverts trigger_push behaviour to that seen in CS:GO.", true);
-    public FakeConVar<bool> DisableSubTickMovement = new("css_fixes_disable_sub_tick_movement", "Disables sub-tick movement.", true);
+    public FakeConVar<bool> DisableSubTickMovement = new("css_fixes_disable_sub_tick_movement", "Disables sub-tick movement.", false);
     
     private void RegisterConVars()
     {

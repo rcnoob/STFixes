@@ -59,16 +59,14 @@ public class PatchManager
         {
             // Water Fix
             AddServerPatch("FixWaterFloorJump", "CheckJumpButtonWater", "11 43");
-            AddServerPatch("WaterLevelGravity", "WaterLevelGravity", "3C 02");
-            AddServerPatch("CategorizeUnderwater", "CategorizeUnderwater", "0F 42");
-            AddServerPatch("BotNavIgnore", "BotNavIgnore", "\\xE9\\x15\\x00\\x00\\x00");
+            AddServerPatch("BotNavIgnore", "BotNavIgnore", "\\xE9\\x25\\x00\\x00\\x00\\x90");
+            AddServerPatch("BotNavIgnore2", "BotNavIgnore", "\\xE9\\x25\\x00\\x00\\x00\\x90");
+            AddServerPatch("BotNavIgnore3", "BotNavIgnore", "\\xE9\\x25\\x00\\x00\\x00\\x90");
         }
         else
         {
             // Water Fix
             AddServerPatch("FixWaterFloorJump", "CheckJumpButtonWater", "11 43");
-            AddServerPatch("WaterLevelGravity", "WaterLevelGravity", "3C 02");
-            AddServerPatch("CategorizeUnderwater", "CategorizeUnderwater", "73");
             AddServerPatch("BotNavIgnore", "BotNavIgnore", "\\xE9\\x2C\\x00\\x00\\x00\\x90");
         }
     }
@@ -93,15 +91,13 @@ public class PatchManager
         
         _patches[patch].PerformPatch();
         
-        // Commented out since it seems to cause crashes every time I test it...
-        // According to src code of CS2Fixes, we should run BotNavIgnore patch 3 times on Linux???
-        /* if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux) && name == "BotNavIgnore")
+        if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux) && name == "BotNavIgnore")
         {
             int patch2 = _patches.FindIndex(patch2 => patch2.GetPatchName() == "BotNavIgnore2");
             _patches[patch2].PerformPatch();
             int patch3 = _patches.FindIndex(patch3 => patch3.GetPatchName() == "BotNavIgnore3");
             _patches[patch3].PerformPatch();
-        } */
+        }
     }
     
     public void UndoPatch(string name)
@@ -116,15 +112,13 @@ public class PatchManager
             return;
         }
         
-        // Commented out since it seems to cause crashes every time I test it...
-        // According to src code of CS2Fixes, we should run BotNavIgnore patch 3 times on Linux???
-        /* if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux) && name == "BotNavIgnore")
+        if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux) && name == "BotNavIgnore")
         {
             int patch3 = _patches.FindIndex(patch3 => patch3.GetPatchName() == "BotNavIgnore3");
             _patches[patch3].UndoPatch();
             int patch2 = _patches.FindIndex(patch2 => patch2.GetPatchName() == "BotNavIgnore2");
             _patches[patch2].UndoPatch();
-        } */
+        }
         
         _patches[patch].UndoPatch();
     }

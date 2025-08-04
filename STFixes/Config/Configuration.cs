@@ -29,7 +29,7 @@ namespace STFixes.Config
         private bool enableWaterFix = true;
         private bool enableBotNavIgnoreFix = true;
         private bool enableTriggerPushFix = true;
-        private bool disableSubTickMovement = true;
+        private bool disableSubTickMovement = false;
 
         public event PropertyChangedEventHandler? PropertyChanged;
 

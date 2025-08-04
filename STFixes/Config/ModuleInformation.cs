@@ -22,7 +22,7 @@ namespace STFixes.Config;
 public class ModuleInformation
 {
     public string ModuleName => "ST-Fixes";
-    public string ModuleVersion => "1.0.3";
+    public string ModuleVersion => "1.0.4";
     public string ModuleAuthor => "hypnos <hyps.dev>, rcnoob";
     public string ModuleDescription => "SharpTimer Fixes";
 }
